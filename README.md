@@ -1,1 +1,1 @@
-Java ile temel hve bilimsel işlemler kullanan hesap makinası 
+Java ile temel ve bilimsel işlemler kullanan hesap makinası 
