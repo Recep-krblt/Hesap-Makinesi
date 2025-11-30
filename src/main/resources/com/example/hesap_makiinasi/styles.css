@@ -1,0 +1,26 @@
+/* styles.css */
+
+/* TabPane Başlık Şeridi Arka Planı */
+.tab-header-background {
+    -fx-background-color: #2f3136;
+}
+
+/* Pasif Sekme Rengi */
+.tab {
+    -fx-background-color: #40444b;
+}
+
+/* Seçili (Aktif) Sekme Rengi - Belirgin Mavi */
+.tab:selected {
+    -fx-background-color: #5865f2;
+}
+
+/* Sekme Üzerindeki Yazı Rengi */
+.tab .tab-label {
+    -fx-text-fill: #ffffff;
+}
+
+/* Fare Üzerine Gelince (Hover) */
+.tab:hover {
+    -fx-background-color: #4f545c;
+}

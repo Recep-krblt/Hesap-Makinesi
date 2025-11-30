@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox xmlns="http://javafx.com/javafx"
+      xmlns:fx="http://javafx.com/fxml"
+      fx:controller="com.example.hesap_makiinasi.HelloController"
+      spacing="10"
+      alignment="CENTER"
+      prefWidth="420"
+      prefHeight="600"
+      style="-fx-background-color: #2f3136;">
+
+    <!--
+         Ekran Alanı:
+         -fx-control-inner-background: #202225; (Koyu Arka Plan)
+    -->
+    <TextArea fx:id="operationLabel"
+              editable="false"
+              wrapText="true"
+              prefHeight="120"
+              style="-fx-control-inner-background: #202225; -fx-background-color: #202225; -fx-text-fill: #b9bbbe; -fx-font-size: 14px;"/>
+
+    <TextField fx:id="display"
+               editable="true"
+               focusTraversable="true"
+               prefHeight="60"
+               maxWidth="Infinity"
+               style="-fx-control-inner-background: #202225; -fx-background-color: #202225; -fx-text-fill: white; -fx-font-size: 34px; -fx-cursor: text;"/>
+
+    <!--
+         === SEKMELİ YAPI ===
+         GÜNCELLEME: 'stylesheets="@styles.css"' eklendi.
+         Hatalı <stylesheets> bloğu kaldırıldı.
+    -->
+    <TabPane tabClosingPolicy="UNAVAILABLE" VBox.vgrow="ALWAYS"
+             style="-fx-tab-min-width: 100px; -fx-background-color: #2f3136;"
+             stylesheets="@styles.css">
+
+        <Tab text="Standart">
+            <GridPane hgap="8" vgap="8" style="-fx-padding: 10; -fx-background-color: #2f3136;">
+                <columnConstraints>
+                    <ColumnConstraints hgrow="ALWAYS"/>
+                    <ColumnConstraints hgrow="ALWAYS"/>
+                    <ColumnConstraints hgrow="ALWAYS"/>
+                    <ColumnConstraints hgrow="ALWAYS"/>
+                </columnConstraints>
+                <rowConstraints>
+                    <RowConstraints vgrow="ALWAYS"/>
+                    <RowConstraints vgrow="ALWAYS"/>
+                    <RowConstraints vgrow="ALWAYS"/>
+                    <RowConstraints vgrow="ALWAYS"/>
+                    <RowConstraints vgrow="ALWAYS"/>
+                    <RowConstraints vgrow="ALWAYS"/>
+                </rowConstraints>
+
+                <Button text="xⁿ" GridPane.rowIndex="0" GridPane.columnIndex="0" onAction="#onOperatorClick" maxWidth="Infinity" maxHeight="Infinity" style="-fx-base: #ffd699;"/>
+                <Button text="√" GridPane.rowIndex="0" GridPane.columnIndex="1" onAction="#onOperatorClick" maxWidth="Infinity" maxHeight="Infinity" style="-fx-base: #ffd699;"/>
+                <Button text="!" GridPane.rowIndex="0" GridPane.columnIndex="2" onAction="#onOperatorClick" maxWidth="Infinity" maxHeight="Infinity" style="-fx-base: #ffd699;"/>
+                <Button text="(" GridPane.rowIndex="0" GridPane.columnIndex="3" onAction="#onOperatorClick" maxWidth="Infinity" maxHeight="Infinity" style="-fx-base: #99b3ff;"/>
+
+                <Button text="ANS" GridPane.rowIndex="1" GridPane.columnIndex="0" onAction="#onAnsClick" maxWidth="Infinity" maxHeight="Infinity" style="-fx-base: #99ff99;"/>
+                <Button text="DEL" GridPane.rowIndex="1" GridPane.columnIndex="1" onAction="#onDelClick" maxWidth="Infinity" maxHeight="Infinity" style="-fx-base: #ff9999;"/>
+                <Button text="C" GridPane.rowIndex="1" GridPane.columnIndex="2" onAction="#onClearClick" maxWidth="Infinity" maxHeight="Infinity" style="-fx-base: #ff9999;"/>
+                <Button text=")" GridPane.rowIndex="1" GridPane.columnIndex="3" onAction="#onOperatorClick" maxWidth="Infinity" maxHeight="Infinity" style="-fx-base: #99b3ff;"/>
+
+                <Button text="7" GridPane.rowIndex="2" GridPane.columnIndex="0" onAction="#onNumberClick" maxWidth="Infinity" maxHeight="Infinity"/>
+                <Button text="8" GridPane.rowIndex="2" GridPane.columnIndex="1" onAction="#onNumberClick" maxWidth="Infinity" maxHeight="Infinity"/>
+                <Button text="9" GridPane.rowIndex="2" GridPane.columnIndex="2" onAction="#onNumberClick" maxWidth="Infinity" maxHeight="Infinity"/>
+                <Button text="÷" GridPane.rowIndex="2" GridPane.columnIndex="3" onAction="#onOperatorClick" maxWidth="Infinity" maxHeight="Infinity" style="-fx-base: #99ccff;"/>
+
+                <Button text="4" GridPane.rowIndex="3" GridPane.columnIndex="0" onAction="#onNumberClick" maxWidth="Infinity" maxHeight="Infinity"/>
+                <Button text="5" GridPane.rowIndex="3" GridPane.columnIndex="1" onAction="#onNumberClick" maxWidth="Infinity" maxHeight="Infinity"/>
+                <Button text="6" GridPane.rowIndex="3" GridPane.columnIndex="2" onAction="#onNumberClick" maxWidth="Infinity" maxHeight="Infinity"/>
+                <Button text="×" GridPane.rowIndex="3" GridPane.columnIndex="3" onAction="#onOperatorClick" maxWidth="Infinity" maxHeight="Infinity" style="-fx-base: #99ccff;"/>
+
+                <Button text="1" GridPane.rowIndex="4" GridPane.columnIndex="0" onAction="#onNumberClick" maxWidth="Infinity" maxHeight="Infinity"/>
+                <Button text="2" GridPane.rowIndex="4" GridPane.columnIndex="1" onAction="#onNumberClick" maxWidth="Infinity" maxHeight="Infinity"/>
+                <Button text="3" GridPane.rowIndex="4" GridPane.columnIndex="2" onAction="#onNumberClick" maxWidth="Infinity" maxHeight="Infinity"/>
+                <Button text="-" GridPane.rowIndex="4" GridPane.columnIndex="3" onAction="#onOperatorClick" maxWidth="Infinity" maxHeight="Infinity" style="-fx-base: #99ccff;"/>
+
+                <Button text="0" GridPane.rowIndex="5" GridPane.columnIndex="0" onAction="#onNumberClick" maxWidth="Infinity" maxHeight="Infinity"/>
+                <Button text="." GridPane.rowIndex="5" GridPane.columnIndex="1" onAction="#onNumberClick" maxWidth="Infinity" maxHeight="Infinity"/>
+                <Button text="=" GridPane.rowIndex="5" GridPane.columnIndex="2" onAction="#onEqualClick" maxWidth="Infinity" maxHeight="Infinity" style="-fx-base: #99ff99;"/>
+                <Button text="+" GridPane.rowIndex="5" GridPane.columnIndex="3" onAction="#onOperatorClick" maxWidth="Infinity" maxHeight="Infinity" style="-fx-base: #99ccff;"/>
+            </GridPane>
+        </Tab>
+
+        <Tab text="Bilimsel">
+            <GridPane hgap="8" vgap="8" style="-fx-padding: 10; -fx-background-color: #2f3136;">
+                <columnConstraints>
+                    <ColumnConstraints hgrow="ALWAYS"/>
+                    <ColumnConstraints hgrow="ALWAYS"/>
+                    <ColumnConstraints hgrow="ALWAYS"/>
+                    <ColumnConstraints hgrow="ALWAYS"/>
+                    <ColumnConstraints hgrow="ALWAYS"/>
+                    <ColumnConstraints hgrow="ALWAYS"/>
+                </columnConstraints>
+                <rowConstraints>
+                    <RowConstraints vgrow="ALWAYS"/>
+                    <RowConstraints vgrow="ALWAYS"/>
+                    <RowConstraints vgrow="ALWAYS"/>
+                    <RowConstraints vgrow="ALWAYS"/>
+                    <RowConstraints vgrow="ALWAYS"/>
+                    <RowConstraints vgrow="ALWAYS"/>
+                </rowConstraints>
+
+                <Button text="log" GridPane.rowIndex="0" GridPane.columnIndex="0" onAction="#onOperatorClick" maxWidth="Infinity" maxHeight="Infinity" style="-fx-base: #e6ccff;"/>
+                <Button text="ln" GridPane.rowIndex="0" GridPane.columnIndex="1" onAction="#onOperatorClick" maxWidth="Infinity" maxHeight="Infinity" style="-fx-base: #e6ccff;"/>
+                <Button text="(" GridPane.rowIndex="0" GridPane.columnIndex="2" onAction="#onOperatorClick" maxWidth="Infinity" maxHeight="Infinity" style="-fx-base: #99b3ff;"/>
+                <Button text=")" GridPane.rowIndex="0" GridPane.columnIndex="3" onAction="#onOperatorClick" maxWidth="Infinity" maxHeight="Infinity" style="-fx-base: #99b3ff;"/>
+                <Button text="C" GridPane.rowIndex="0" GridPane.columnIndex="4" onAction="#onClearClick" maxWidth="Infinity" maxHeight="Infinity" style="-fx-base: #ff9999;"/>
+                <Button text="DEL" GridPane.rowIndex="0" GridPane.columnIndex="5" onAction="#onDelClick" maxWidth="Infinity" maxHeight="Infinity" style="-fx-base: #ff9999;"/>
+
+                <Button text="sin" GridPane.rowIndex="1" GridPane.columnIndex="0" onAction="#onOperatorClick" maxWidth="Infinity" maxHeight="Infinity" style="-fx-base: #ccffff;"/>
+                <Button text="cos" GridPane.rowIndex="1" GridPane.columnIndex="1" onAction="#onOperatorClick" maxWidth="Infinity" maxHeight="Infinity" style="-fx-base: #ccffff;"/>
+                <Button text="xⁿ" GridPane.rowIndex="1" GridPane.columnIndex="2" onAction="#onOperatorClick" maxWidth="Infinity" maxHeight="Infinity" style="-fx-base: #ffd699;"/>
+                <Button text="√" GridPane.rowIndex="1" GridPane.columnIndex="3" onAction="#onOperatorClick" maxWidth="Infinity" maxHeight="Infinity" style="-fx-base: #ffd699;"/>
+                <Button text="ⁿ√x" GridPane.rowIndex="1" GridPane.columnIndex="4" onAction="#onOperatorClick" maxWidth="Infinity" maxHeight="Infinity" style="-fx-base: #ffd699;"/>
+                <Button text="÷" GridPane.rowIndex="1" GridPane.columnIndex="5" onAction="#onOperatorClick" maxWidth="Infinity" maxHeight="Infinity" style="-fx-base: #99ccff;"/>
+
+                <Button text="tan" GridPane.rowIndex="2" GridPane.columnIndex="0" onAction="#onOperatorClick" maxWidth="Infinity" maxHeight="Infinity" style="-fx-base: #ccffff;"/>
+                <Button text="cot" GridPane.rowIndex="2" GridPane.columnIndex="1" onAction="#onOperatorClick" maxWidth="Infinity" maxHeight="Infinity" style="-fx-base: #ccffff;"/>
+                <Button text="7" GridPane.rowIndex="2" GridPane.columnIndex="2" onAction="#onNumberClick" maxWidth="Infinity" maxHeight="Infinity"/>
+                <Button text="8" GridPane.rowIndex="2" GridPane.columnIndex="3" onAction="#onNumberClick" maxWidth="Infinity" maxHeight="Infinity"/>
+                <Button text="9" GridPane.rowIndex="2" GridPane.columnIndex="4" onAction="#onNumberClick" maxWidth="Infinity" maxHeight="Infinity"/>
+                <Button text="×" GridPane.rowIndex="2" GridPane.columnIndex="5" onAction="#onOperatorClick" maxWidth="Infinity" maxHeight="Infinity" style="-fx-base: #99ccff;"/>
+
+                <Button text="sec" GridPane.rowIndex="3" GridPane.columnIndex="0" onAction="#onOperatorClick" maxWidth="Infinity" maxHeight="Infinity" style="-fx-base: #ccffff;"/>
+                <Button text="csc" GridPane.rowIndex="3" GridPane.columnIndex="1" onAction="#onOperatorClick" maxWidth="Infinity" maxHeight="Infinity" style="-fx-base: #ccffff;"/>
+                <Button text="4" GridPane.rowIndex="3" GridPane.columnIndex="2" onAction="#onNumberClick" maxWidth="Infinity" maxHeight="Infinity"/>
+                <Button text="5" GridPane.rowIndex="3" GridPane.columnIndex="3" onAction="#onNumberClick" maxWidth="Infinity" maxHeight="Infinity"/>
+                <Button text="6" GridPane.rowIndex="3" GridPane.columnIndex="4" onAction="#onNumberClick" maxWidth="Infinity" maxHeight="Infinity"/>
+                <Button text="-" GridPane.rowIndex="3" GridPane.columnIndex="5" onAction="#onOperatorClick" maxWidth="Infinity" maxHeight="Infinity" style="-fx-base: #99ccff;"/>
+
+                <Button text="π" GridPane.rowIndex="4" GridPane.columnIndex="0" onAction="#onOperatorClick" maxWidth="Infinity" maxHeight="Infinity" style="-fx-base: #ffffcc;"/>
+                <Button text="e" GridPane.rowIndex="4" GridPane.columnIndex="1" onAction="#onOperatorClick" maxWidth="Infinity" maxHeight="Infinity" style="-fx-base: #ffffcc;"/>
+                <Button text="1" GridPane.rowIndex="4" GridPane.columnIndex="2" onAction="#onNumberClick" maxWidth="Infinity" maxHeight="Infinity"/>
+                <Button text="2" GridPane.rowIndex="4" GridPane.columnIndex="3" onAction="#onNumberClick" maxWidth="Infinity" maxHeight="Infinity"/>
+                <Button text="3" GridPane.rowIndex="4" GridPane.columnIndex="4" onAction="#onNumberClick" maxWidth="Infinity" maxHeight="Infinity"/>
+                <Button text="+" GridPane.rowIndex="4" GridPane.columnIndex="5" onAction="#onOperatorClick" maxWidth="Infinity" maxHeight="Infinity" style="-fx-base: #99ccff;"/>
+
+                <Button text="|x|" GridPane.rowIndex="5" GridPane.columnIndex="0" onAction="#onOperatorClick" maxWidth="Infinity" maxHeight="Infinity" style="-fx-base: #ffd699;"/>
+                <Button text="Mod" GridPane.rowIndex="5" GridPane.columnIndex="1" onAction="#onOperatorClick" maxWidth="Infinity" maxHeight="Infinity" style="-fx-base: #ffd699;"/>
+                <Button text="\%" GridPane.rowIndex="5" GridPane.columnIndex="2" onAction="#onOperatorClick" maxWidth="Infinity" maxHeight="Infinity" style="-fx-base: #ffd699;"/>
+                <Button text="0" GridPane.rowIndex="5" GridPane.columnIndex="3" onAction="#onNumberClick" maxWidth="Infinity" maxHeight="Infinity"/>
+                <Button text="." GridPane.rowIndex="5" GridPane.columnIndex="4" onAction="#onNumberClick" maxWidth="Infinity" maxHeight="Infinity"/>
+                <Button text="=" GridPane.rowIndex="5" GridPane.columnIndex="5" onAction="#onEqualClick" maxWidth="Infinity" maxHeight="Infinity" style="-fx-base: #99ff99;"/>
+            </GridPane>
+        </Tab>
+    </TabPane>
+</VBox>
