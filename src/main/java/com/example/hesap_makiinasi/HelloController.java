@@ -329,7 +329,7 @@ public class HelloController {
             justCalculated = true;
 
         } catch (Exception e) {
-            display.setText("Hata");
+            display.setText("ERORR");
         }
     }
 
