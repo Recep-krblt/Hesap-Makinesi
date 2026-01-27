@@ -34,7 +34,7 @@ public class HelloApplication extends Application {
         mainStage.setTitle("Hesap Makinesi");
         mainStage.setScene(mainScene);
 
-        // --- 2. SPLASH SCREEN (AÇILIŞ EKRANI) OLUŞTURMA ---
+        // --- 2. SPLASH SCREEN (AÇILIŞ EKRANI) OLUŞTURA ---
         Stage splashStage = new Stage();
 
         // İkonu Görsel Nesnesine Çevir (Splash Screen için)
